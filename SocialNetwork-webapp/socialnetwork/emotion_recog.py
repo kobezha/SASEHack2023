@@ -174,19 +174,19 @@ def train_model():
 
 def classify_emotion(text):
     # load label encoder
-    le_path = "labelEncoder.pickle"
+    le_path = "socialnetwork/labelEncoder.pickle"
     with open(le_path, "rb") as f:
         # Use the pickle.load() function to deserialize the data
         le = pickle.load(f)
 
     # load tokenizer
-    tokenizer_path = "tokenizer.pickle"
+    tokenizer_path = "socialnetwork/tokenizer.pickle"
     with open(tokenizer_path, "rb") as f:
         # Use the pickle.load() function to deserialize the data
         tokenizer = pickle.load(f)
 
     # load saved trained emotion recog model
-    model_path = "emotion-recog-model.h5"
+    model_path = "socialnetwork/emotion-recog-model.h5"
     model = load_model(model_path)
 
 

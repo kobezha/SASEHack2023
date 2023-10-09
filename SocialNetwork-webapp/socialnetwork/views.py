@@ -21,6 +21,8 @@ from django.conf import settings
 from datetime import datetime, timedelta
 
 import openai
+from socialnetwork.sentiment_analysis import *
+from socialnetwork.emotion_recog import *
 
 @ensure_csrf_cookie
 @login_required
@@ -268,7 +270,7 @@ def start_chat(request):
     system_msg = "friendly, approachable, and supportive"
     conversation_history.append({"role":"system", "content":system_msg})
 
-    openai.api_key = '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'
+    openai.api_key = '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'
 
     initial_query = 'Hello please guide me in making a journal entry and ask me questions to help me think. Lets start with you exactly repeating the following phrase and nothing else:"Would you like to make a journal entry?""'
     initial_answer = 'Would you like to make a journal entry?'
@@ -301,7 +303,7 @@ def chat(request):
     promptAnswers = request.session.get('promptAnswers', [])
 
     # Initialize the OpenAI client with your API key
-    openai.api_key = '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'
+    openai.api_key = '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'
 
     if query == "finish":
         chatLogs = "\n".join(promptAnswers)
@@ -309,6 +311,20 @@ def chat(request):
         conversation_history.append({"role": "assistant","content":journalPrompt + chatLogs })
     else:
         # Add the new query to the conversation history
+        score = get_sentiment(query)
+        emotion = classify_emotion(query)
+        #if the emotion and sentiment do not match
+        if(   ((emotion =='anger' or emotion == 'sadness') and score >= .2)
+        or ((emotion =='joy' or emotion == 'love') and score <= -.2)):
+            #disregard the ai
+            #something more complex here
+            score = 0
+            emotion = ''
+        else:   
+            #do something with the data
+            sentence = f"Please keep in mind that I am feeling {emotion}"
+            query += sentence
+            print(sentence)
         conversation_history.append({"role": "user", "content": query})
             
     print("sending response")
@@ -333,3 +349,4 @@ def chat(request):
     data = {"answer": answer}
 
     return HttpResponse(json.dumps(data), content_type='application/json')
+
