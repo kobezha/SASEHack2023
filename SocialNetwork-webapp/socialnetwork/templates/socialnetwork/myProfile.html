@@ -1,0 +1,62 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block content %}
+    {% load static %}
+    <div class="user_page">
+        <div class="user_profile">
+            <img src="{% static 'socialnetwork/user-profile-pic.png' %}" width="140" height="80" alt="knot">
+            <div class="username">{{user.username}}</div>
+            <div class="streak">Streak: {{user.profile.streak}} days</div>
+        </div>
+
+        <div class = "emotion_dashboard">
+            <div class="content"> How are you feeling today? </div>
+            <div class="emotes"> 
+                <img src="{% static 'socialnetwork/mood1.png' %}" width="70" height="60">
+                <img src="{% static 'socialnetwork/mood2.png' %}" width="70" height="60">
+                <img src="{% static 'socialnetwork/mood3.png' %}" width="70" height="60">
+                <img src="{% static 'socialnetwork/mood4.png' %}" width="70" height="60">
+                <img src="{% static 'socialnetwork/mood5.png' %}" width="70" height="60">
+            </div>
+        </div>
+    
+        <div class = "plant">
+            <img id="growth_points_graphic" src="" alt="plant">
+            <script>
+                // dif plant gifs that will be displayed based on the user's growth pts
+                var imageNames = [  
+                                    "{% static 'socialnetwork/plant-growing-small.gif' %}",
+                                    "{% static 'socialnetwork/plant-growing-med.gif' %}",
+                                    "{% static 'socialnetwork/plant-growing.gif' %}"];
+                
+                var growth_pts = 90; // need to change this part, ask xuan what global variable to use
+                var imageElement = document.getElementById("growth_points_graphic");
+                if (growth_pts < 100){
+                    imageElement.src = imageNames[0];
+                } else if (growth_pts < 500){
+                    imageElement.src = imageNames[1];
+                }
+                else{
+                    imageElement.src = imageNames[2];
+                }
+            </script>
+            <!-- <img id="growth_points_graphic" src="{% static 'socialnetwork/plant-growing.gif' %}" alt="plant"> -->
+            
+        </div>
+
+        <div class = "growth_points">
+            <span class="content"><img src="{% static 'socialnetwork/growth-pts.png' %}" alt="growth-pts"> Growth pts: {{user.profile.growth_points}} </span>
+        </div>
+    
+        <div class = "post_list">
+            {% for post in posts %}
+                <div class='post_item'>
+                    <span class='date'> {{post.creation_time}}</span>
+                    <div class='title'> {{post.title}} </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+	
+    
+{% endblock %}
