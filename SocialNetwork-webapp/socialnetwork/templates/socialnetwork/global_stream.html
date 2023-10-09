@@ -1,0 +1,23 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block content %}
+	<!-- display error messages if any -->
+	{% for error in errors %}
+	    <div class="error">
+	        {{error}}
+	    </div>
+	{% endfor %}
+	<!-- make a new post -->
+	<div>
+		<form method='post' action="{% url 'add_post' %}", class="diary-entry-form">
+            <input type="text" id="diary-title" name="title" required placeholder="Your Diary Entry Title" class="input-field">
+            <textarea id="diary-body" name="post" required placeholder="How are you feeling today?" rows="5" class="input-field"></textarea>
+			<input type="submit" value="Post">
+			{% csrf_token %}
+		</form>
+	</div>
+	<br/>
+
+	<div class='post_items'>
+	</div>
+{% endblock %}

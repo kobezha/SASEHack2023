@@ -1,0 +1,421 @@
+body{
+	background-color: #e5ede3;
+    font-family: "Verdana";
+    /* margin-left: 150px;
+    margin-right: 150px; */
+}
+.big_heading {
+    background-image: linear-gradient(to right, #3dae53, #89c440);
+    padding: 20px;
+    padding-left: 90px;
+    text-align: left;
+    font-size: 50px;
+    border-radius: 30px;
+    margin: 15px 50px;
+    color: white;
+    font-family: Rockwell;
+}
+.big_heading a{
+    text-decoration: none;
+    color: white;
+}
+.current_page{
+	padding-left: 120px;
+	background-color: #b3ffb3;
+	padding: 10px;
+	text-align: center;
+	font-size: 25px;
+	border-radius: 20px;
+	margin: 15px 50px;
+}
+.content{
+	padding-left: 100px;
+	padding-right: 50px;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	font-size: 20px;
+	overflow: hidden;
+}
+.post_item{
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login_form{
+    margin: auto;
+    width: 50%;
+	font-style: italic;
+	font-size: 20px;
+}
+.register_form{
+    margin: auto;
+    width: 50%;
+	font-style: italic;
+	font-size: 20px;
+}
+/*navagation bar*/
+ul.nav_class_list{
+	list-style-type: none;
+    margin: 15px 50px;
+    padding: 0;
+    float: left;
+    max-width: 120px;
+}
+li a.nav_class_bullet {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+li a.nav_class_bullet:hover {
+    background-color: #555;
+    color: white;
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+input[type=password]:focus {
+    border: 3px solid #555;
+}
+
+/*Login and Register buttons style*/
+input[value=Login]{
+    position: relative;
+    left: 100px;
+	margin: auto;
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 26px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+input[value=Register]{
+    position: relative;
+    left: 95px;
+    margin: auto;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 26px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+input[value=Login]:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+input[value=Register]:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/*POST button*/
+input[value=Post]{
+    position:relative;
+    margin: auto;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 4px 9px;
+    text-decoration: none;
+    margin: 1.4px 0.7px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+input[value=Post]:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    position:relative;
+}
+
+/*images*/
+.img1{
+    position: absolute;
+    left:80px;
+    top:10px;
+}
+.img2{
+    position: absolute;
+    right:100px;
+    top:45px;
+}
+.img3{
+    position: absolute;
+    right:200px;
+    top:30px;
+}
+.img4{
+    position: absolute;
+    right:115px;
+    top:133px;
+}
+
+.comment_list {
+    display: none;
+}
+
+.comment_list ul {
+    list-style-position: inside;
+    margin:0;
+    padding:0;
+    color: white;
+}
+
+.comment_list li {
+    background-color: #037e37;
+    padding: 12px;
+    color: #f3ff9f;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+.comment_list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.post_item .title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.post_item .post_head{
+    color: #25995c;
+}
+
+.post_item .post_head a{
+    color: #25995c;
+    text-decoration: none;
+}
+
+.post_item .content{
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.relates {
+    color: #e05a47;
+    cursor: pointer;
+}
+
+.relates img {
+    display:inline-block;
+    height: 1em;
+}
+
+.hugs {
+    color: #844c6e;
+    cursor: pointer;
+}
+
+.hugs img {
+    display:inline-block;
+    height: 1em;
+}
+
+.comments {
+    color: black;
+    cursor: pointer;
+}
+
+.comments img {
+    display:inline-block;
+    height: 1em;
+}
+
+.date {
+    float:right;
+    text-align: right;
+    font-style: italic;
+}
+
+.diary-entry-form {
+    padding: 20px;
+    margin: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+textarea.input-field {
+    resize: vertical;
+}
+
+.user_page {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+}
+
+.user_profile {
+    /* Assuming you want it half the width of the viewport */
+    grid-area: 1 / 1 / 2 / 4;
+    font-weight: bold;
+    max-height: 150px;
+    font-size: 40px;
+}
+
+.user_profile img{
+    float: left;
+    margin-right: 10px;
+}
+
+.user_profile .username {
+    /* Assuming you want it half the width of the viewport */
+    color: #25995c;
+}
+
+.user_profile .streak {
+    /* Assuming you want it half the width of the viewport */
+    color: #e05a47;
+}
+
+.emotion_dashboard {
+    background-color: white;
+    grid-area: 1 / 4 / 2 / 7;
+    max-height: 120px;
+}
+
+.emotion_dashboard .content{
+    color: #25995c;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.emotes {
+    text-align: center;
+}
+
+.emotes img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.plant {
+    grid-area: 2 / 1 / 4 / 3;
+}
+
+.plant img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.growth_points {
+    grid-area: 4 / 1 / 5 / 3;
+    background-image: linear-gradient(to right, #aec579, #61ef24);
+    margin: 50px;
+    margin-top: 0px;
+    margin-bottom: 100px;
+}
+
+.growth_points .content {
+    color: white;
+}
+
+.growth_points .content img {
+    display:inline-block;
+    height: 1em;
+}
+
+
+.post_list {
+    grid-area: 2 / 3 / 6 / 7;/* In case the list of blog entries is long */
+}
+
+
+.chat-container {
+    margin: 50px auto;
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    overflow: auto;
+}
+
+ol.chat-container {
+    list-style-type: none;
+}
+
+.message {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    line-height: 1.4;
+    position: relative;
+}
+
+.received {
+    background-color: #02853e;
+    align-self: flex-start;
+    margin-right: auto;
+    color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+.sent {
+    background-color: #bdbff6;
+    color: #8070ab;
+    align-self: flex-end;
+    margin-left: auto;
+    order: -1; /* Makes sent messages appear on the right */
+    border-style: solid;
+    border-color: #6e70ab;
+    border-width: 5px;
+    text-align: right;
+}
+
+/* Triangle-like arrow on received messages */
+.received::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-right-color: #e1e1e1;
+}
+
+/* Triangle-like arrow on sent messages */
+.sent::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: #e1e1e1;
+}
+
+.waiting_box {
+    background-color: orange;
+    display:none;
+}
